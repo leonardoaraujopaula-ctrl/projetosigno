@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seu Signo</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="resultado-card">
+
+            <div id="simbolo" class="simbolo-signo">
+                ♈
+            </div>
+
+            <h1 id="nome" class="nome-signo">
+                Áries
+            </h1>
+
+            <p id="periodo" class="periodo">
+                21 de março a 19 de abril
+            </p>
+
+            <div class="info">
+
+                <h3>✨ Características</h3>
+
+                <p id="caracteristicas">
+                    Carregando informações...
+                </p>
+
+            </div>
+
+            <div class="info">
+
+                <h3>💫 Elemento</h3>
+
+                <p id="elemento">
+                    Fogo
+                </p>
+
+            </div>
+
+            <div class="info">
+
+                <h3>🪐 Planeta regente</h3>
+
+                <p id="planeta">
+                    Marte
+                </p>
+
+            </div>
+
+            <a href="index.html" class="voltar">
+                ← Descobrir outro signo
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const signos = {
+
+            aries: {
+                nome: "Áries",
+                simbolo: "♈",
+                periodo: "21 de março a 19 de abril",
+                elemento: "Fogo",
+                planeta: "Marte",
+                caracteristicas:
+                    "Áries é conhecido por sua coragem, energia e determinação. Pessoas desse signo costumam ser aventureiras, independentes e gostam de novos desafios."
+            },
+
+            touro: {
+                nome: "Touro",
+                simbolo: "♉",
+                periodo: "20 de abril a 20 de maio",
+                elemento: "Terra",
+                planeta: "Vênus",
+                caracteristicas:
+                    "Touro é conhecido por ser paciente, determinado e leal. Valoriza estabilidade, conforto e segurança, além de apreciar as coisas boas da vida."
+            },
+
+            gemeos: {
+                nome: "Gêmeos",
+                simbolo: "♊",
+                periodo: "21 de maio a 20 de junho",
+                elemento: "Ar",
+                planeta: "Mercúrio",
+                caracteristicas:
+                    "Gêmeos é comunicativo, curioso e inteligente. Pessoas desse signo gostam de aprender, conversar e conhecer coisas novas."
+            },
+
+            cancer: {
+                nome: "Câncer",
+                simbolo: "♋",
+                periodo: "21 de junho a 22 de julho",
+                elemento: "Água",
+                planeta: "Lua",
+                caracteristicas:
+                    "Câncer é um signo sensível, protetor e muito ligado à família. Costuma valorizar sentimentos, amizades e relações próximas."
+            },
+
+            leao: {
+                nome: "Leão",
+                simbolo: "♌",
+                periodo: "23 de julho a 22 de agosto",
+                elemento: "Fogo",
+                planeta: "Sol",
+                caracteristicas:
+                    "Leão é conhecido por sua confiança, criatividade e generosidade. Pessoas desse signo costumam gostar de liderança e de expressar sua personalidade."
+            },
+
+            virgem: {
+                nome: "Virgem",
+                simbolo: "♍",
+                periodo: "23 de agosto a 22 de setembro",
+                elemento: "Terra",
+                planeta: "Mercúrio",
+                caracteristicas:
+                    "Virgem é organizado, cuidadoso e observador. Costuma prestar atenção aos detalhes e gosta de ajudar as pessoas."
+            },
+
+            libra: {
+                nome: "Libra",
+                simbolo: "♎",
+                periodo: "23 de setembro a 22 de outubro",
+                elemento: "Ar",
+                planeta: "Vênus",
+                caracteristicas:
+                    "Libra valoriza equilíbrio, harmonia e relacionamentos. Pessoas desse signo costumam ser diplomáticas, sociáveis e gostam de beleza."
+            },
+
+            escorpiao: {
+                nome: "Escorpião",
+                simbolo: "♏",
+                periodo: "23 de outubro a 21 de novembro",
+                elemento: "Água",
+                planeta: "Plutão",
+                caracteristicas:
+                    "Escorpião é intenso, determinado e misterioso. Costuma demonstrar muita dedicação às pessoas e aos objetivos que considera importantes."
+            },
+
+            sagitario: {
+                nome: "Sagitário",
+                simbolo: "♐",
+                periodo: "22 de novembro a 21 de dezembro",
+                elemento: "Fogo",
+                planeta: "Júpiter",
+                caracteristicas:
+                    "Sagitário é aventureiro, otimista e gosta de liberdade. Pessoas desse signo costumam gostar de viagens, descobertas e novas experiências."
+            },
+
+            capricornio: {
+                nome: "Capricórnio",
+                simbolo: "♑",
+                periodo: "22 de dezembro a 19 de janeiro",
+                elemento: "Terra",
+                planeta: "Saturno",
+                caracteristicas:
+                    "Capricórnio é responsável, disciplinado e determinado. Costuma estabelecer objetivos e trabalhar bastante para alcançá-los."
+            },
+
+            aquario: {
+                nome: "Aquário",
+                simbolo: "♒",
+                periodo: "20 de janeiro a 18 de fevereiro",
+                elemento: "Ar",
+                planeta: "Urano",
+                caracteristicas:
+                    "Aquário é independente, criativo e inovador. Pessoas desse signo costumam gostar de liberdade e de ideias diferentes."
+            },
+
+            peixes: {
+                nome: "Peixes",
+                simbolo: "♓",
+                periodo: "19 de fevereiro a 20 de março",
+                elemento: "Água",
+                planeta: "Netuno",
+                caracteristicas:
+                    "Peixes é sensível, imaginativo e empático. Costuma ter muita criatividade e se preocupar bastante com os sentimentos das outras pessoas."
+            }
+
+        };
+
+
+        // Pega o signo enviado pela página inicial
+        const parametros = new URLSearchParams(window.location.search);
+
+        const signoEscolhido = parametros.get("signo");
+
+        const signo = signos[signoEscolhido];
+
+
+        // Mostra as informações na tela
+        if (signo) {
+
+            document.getElementById("simbolo").textContent =
+                signo.simbolo;
+
+            document.getElementById("nome").textContent =
+                signo.nome;
+
+            document.getElementById("periodo").textContent =
+                signo.periodo;
+
+            document.getElementById("caracteristicas").textContent =
+                signo.caracteristicas;
+
+            document.getElementById("elemento").textContent =
+                signo.elemento;
+
+            document.getElementById("planeta").textContent =
+                signo.planeta;
+
+        } else {
+
+            document.getElementById("nome").textContent =
+                "Signo não encontrado";
+
+            document.getElementById("caracteristicas").textContent =
+                "Não foi possível encontrar o signo informado.";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
